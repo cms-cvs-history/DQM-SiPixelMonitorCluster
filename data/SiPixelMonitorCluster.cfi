@@ -1,0 +1,4 @@
+module SiPixelClusterSource = SiPixelClusterSource { 
+	InputTag src = siPixelClusters
+	string outputFile = "Pixel_DQM_Cluster.root"
+}
