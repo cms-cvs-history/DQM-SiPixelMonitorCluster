@@ -23,14 +23,15 @@ process.maxEvents = cms.untracked.PSet(
 process.source = cms.Source("PoolSource",
     debugFlag = cms.untracked.bool(True),
     debugVebosity = cms.untracked.uint32(10),
-    fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/user/c/chiochia/cmssw/Muon_FullValidation_150pre3.root')
+    fileNames = cms.untracked.vstring('rfio:/castor/cern.ch/cms/store/relval/2008/6/12/RelVal-RelValSingleMuPt10-ChainTest-02/RelValSingleMuPt10/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/CMSSW_2_1_0_pre5-RelVal-ChainTest-02-IDEAL_V1-unmerged/0000/6E294919-F83D-DD11-BBF0-000423D6B358.root')
 )
 
 process.LockService = cms.Service("LockService",
     labels = cms.untracked.vstring('source')
 )
 
-process.p1 = cms.Path(process.siPixelClusters*process.SiPixelClusterSource)
+#process.p1 = cms.Path(process.siPixelClusters*process.SiPixelClusterSource)
+process.p1 = cms.Path(process.SiPixelClusterSource)
 process.SiPixelClusterSource.saveFile = True
 process.SiPixelClusterSource.isPIB = False
 process.SiPixelClusterSource.slowDown = False
